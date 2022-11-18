@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:54:11 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/11/15 23:02:25 by oezzaou          ###   ########.fr       */
+/*   Updated: 2022/11/18 01:39:04 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pipex.h"
@@ -22,7 +22,7 @@ t_cmd	*ft_lstlast(t_cmd *cmds)
 	return (0);
 }
 
-t_cmd   *ft_lstnew(char *cmd_n)
+t_cmd   *ft_lstnew(char *cmd_n, int index, int ac)
 {
         t_cmd   *cmds;
 	char	**tab;
@@ -31,10 +31,55 @@ t_cmd   *ft_lstnew(char *cmd_n)
         cmds = (t_cmd *) malloc(sizeof(t_cmd));
         if (!cmds)
                 return (0);
-        cmds->cmd_name = tab[0];
-        cmds->options = tab;
-        cmds->next = 0;
+	if (index == 1)
+	{
+		cmds->id = index;
+		cmds->name = "cat";
+		cmds->path = "/bin/cat";
+		cmds->options = ft_split(ft_strjoin("cat ", tab[0]), " ");
+	}
+	else if (index == ac - 1)
+	{
+		cmds->id = index;
+		cmds->name = "tee";
+		cmds->path = "/usr/bin/tee";
+		cmds->options = ft_split(ft_strjoin("tee ", tab[0]), " ");
+	}
+	else
+	{
+		cmds->id = index;
+        	cmds->name = tab[0];
+        	cmds->options = tab;
+		cmds->path = ft_strjoin("/bin/", tab[0]);
+        	cmds->next = 0;
+	}
 	return (cmds);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+	char	*s;
+
+	if (!s1 || !s2)
+		return (0);
+	i = -1;
+	while (s1[++i])
+		;
+	j = -1;
+	while (s2[++j])
+		;
+	s = (char *) malloc(i + j + 1);
+	if (!s)
+		return (0);
+	i = 0;
+	while (*s1)
+		s[i++] = *(s1++);
+	while (*s2)
+		s[i++] = *(s2++);
+	s[i] = 0;
+	return (s);
 }
 
 int	ft_is_exist(char s, char *set)
@@ -110,11 +155,6 @@ char	**ft_split(char *s, char *set)
 /*
 int	main(int ac, char **av)
 {
-	char	**tab;
-
-	tab = ft_split(av[1], av[2]);
-	while (*tab)
-		printf("%s\n", *(tab++));
+	printf("-----> %s\n", ft_strjoin(av[1], av[2]));
 	return (0);
-}
-*/
+}*/

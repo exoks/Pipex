@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "pipex.h"
 
+//====<[ ft_print_err_msg: ]>===================================================
 int	ft_print_err_msg(t_cmd *cmds)
 {
 	pid_t	pid;
@@ -35,6 +36,7 @@ int	ft_print_err_msg(t_cmd *cmds)
 	return (EXIT_ERROR);
 }
 
+//====<[ ft_clear: ]>===========================================================
 void	ft_clear(t_cmd *cmds, int *pipes, char **av, char **paths)
 {
 	int	i;
@@ -61,6 +63,7 @@ void	ft_clear(t_cmd *cmds, int *pipes, char **av, char **paths)
 	free(cmds);
 }
 
+//====<[ ft_close_all_fd: ]>====================================================
 void	ft_close_all_fd(t_cmd *cmds, int *pipes, int *inout_fd)
 {
 	ft_manage_pipes(pipes, cmds->files->ncmds + cmds->hdoc, CLOSE);

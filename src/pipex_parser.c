@@ -11,11 +11,13 @@
 /* ************************************************************************** */
 #include "pipex.h"
 
+//====<[ Prototypes: ]>=========================================================
 int		ft_whos_first(char *s);
 char	**ft_extract_paths(char **env);
 char	*ft_get_cmd_path(char *cmd_name, char **paths);
 char	**ft_extract_args(char *cmd);
 
+//====<[ ft_extract_cmds: ]>====================================================
 t_cmd	*ft_extract_cmds(int ac, char **av, char **env, int is_hdoc)
 {
 	t_cmd	*cmds;
@@ -45,6 +47,7 @@ t_cmd	*ft_extract_cmds(int ac, char **av, char **env, int is_hdoc)
 	return (cmds);
 }
 
+//====<[ ft_whos_first: ]>======================================================
 int	ft_whos_first(char *s)
 {
 	int	i;
@@ -57,6 +60,7 @@ int	ft_whos_first(char *s)
 	return (' ');
 }
 
+//====<[ ft_extract_args: ]>====================================================
 char	**ft_extract_args(char *cmd)
 {
 	char	sep;
@@ -79,6 +83,7 @@ char	**ft_extract_args(char *cmd)
 	return (args);
 }
 
+//====<[ ft_get_cmd_path: ]>====================================================
 char	*ft_get_cmd_path(char *cmd_name, char **paths)
 {
 	char	*path;
@@ -99,6 +104,7 @@ char	*ft_get_cmd_path(char *cmd_name, char **paths)
 	return (path);
 }
 
+//====<[ ft_extract_paths: ]>===================================================
 char	**ft_extract_paths(char **env)
 {
 	while (env && *env && !ft_strnstr(*env, "PATH", 4))

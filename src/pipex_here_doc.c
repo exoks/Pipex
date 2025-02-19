@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "pipex.h"
 
+//====<[ get_next_line: ]>======================================================
 char	*get_next_line(int fd)
 {
 	char	c;
@@ -33,6 +34,7 @@ char	*get_next_line(int fd)
 	return (buff);
 }
 
+//====<[ ft_here_doc: ]>========================================================
 char	**ft_here_doc(int ac, char **av, int *pipes)
 {
 	char	**tab;

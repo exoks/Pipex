@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "pipex.h"
 
+//====<[ main: ]>===============================================================
 int	main(int ac, char **av, char **env)
 {
 	t_cmd	*cmds;
@@ -19,15 +20,15 @@ int	main(int ac, char **av, char **env)
 	int		inout_fd[2];
 	int		is_here_doc;
 
+	pipes = NULL;
 	if (ac <= 4)
 		return (EXIT_FAILURE);
-	pipes = NULL;
 	is_here_doc = (!ft_strncmp(av[1], "here_doc", ft_strlen(av[1])));
 	pipes = ft_manage_pipes(pipes, ac - 3, PIPE);
 	if (is_here_doc)
 		av = ft_here_doc(ac--, av, pipes);
 	cmds = ft_extract_cmds(ac, av, env, is_here_doc);
-	if (!cmds)
+	if (cmds == NULL)
 		return (EXIT_FAILURE);
 	cmds->files->infile = av[1];
 	cmds->files->outfile = av[ac - 1];
@@ -40,6 +41,7 @@ int	main(int ac, char **av, char **env)
 	return (*((char *) &status + 1));
 }
 
+//====<[ ft_wait_child_ps: ]>===================================================
 void	ft_wait_child_ps(t_cmd *cmds, int *status)
 {
 	while (cmds->id)
@@ -47,6 +49,7 @@ void	ft_wait_child_ps(t_cmd *cmds, int *status)
 			exit(EXIT_FAILURE);
 }
 
+//====<[ get_inout_files: ]>====================================================
 int	get_inout_files(t_cmd *cmds, int *inout_fd)
 {
 	int		flag;
@@ -65,6 +68,7 @@ int	get_inout_files(t_cmd *cmds, int *inout_fd)
 	return (0);
 }
 
+//====<[ ft_exec_cmds: ]>=======================================================
 int	ft_exec_cmds(t_cmd *cmds, char **env, int *pipes, int *inout_fd)
 {
 	while (cmds->id)
@@ -93,6 +97,7 @@ int	ft_exec_cmds(t_cmd *cmds, char **env, int *pipes, int *inout_fd)
 	return (0);
 }
 
+//====<[ ft_manage_pipes: ]>====================================================
 int	*ft_manage_pipes(int *pipes, int ncmds, int flag)
 {
 	int	i;

@@ -67,7 +67,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | .create_dir
 $(FT_PRINTF):
 	@make -C $@ all
 
-bonus: fclean all
+bonus: all
 
 test:
 	./$(NAME) "file1" "./hello world.sh" "cat -e" "file2" && cat file2

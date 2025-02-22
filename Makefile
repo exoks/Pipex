@@ -54,7 +54,7 @@ OBJ						:= $(addsuffix .o, $(addprefix $(OBJ_DIR)/, $(basename $(SRC))))
 SRC						:= $(addprefix $(SRC_DIR)/, $(SRC))
 
 #====<[ Rules: ]>===============================================================
-all: $(NAME) 
+all: signature $(NAME) 
 
 $(NAME): $(FT_PRINTF) $(OBJ) 
 	@$(CC) $(CFLAGS) $(INCLUDE) $(filter-out $<, $^) $(LIBFTPRINTF) -o $@
@@ -66,6 +66,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | .create_dir
 
 $(FT_PRINTF):
 	@make -C $@ all
+
+signature:
+	@printf "${GRAY}%19s${RESET}\n" "𓆩♕𓆪"
+	@printf "${GRAY}%s${RESET}\n"		"𓄂 oussama ezzaou𓆃  "
 
 bonus: all
 
@@ -97,5 +101,5 @@ $(OBJ_DIR):
 
 .create_dir: $(OBJ_DIR)
 
-.PHONY: all clean fclean re test $(FT_PRINTF)
+.PHONY: all clean fclean re signature $(FT_PRINTF)
 #===============================================================================

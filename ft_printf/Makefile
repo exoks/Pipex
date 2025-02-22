@@ -45,7 +45,7 @@ NAME			:= libftprintf.a
 SRC_DIR		:= src
 OBJ_DIR		:= obj
 LIBFT			:= libft
-INCLUDE		:= -I$(LIBFT) -Iinclude
+INCLUDE		:= -I$(LIBFT)/include -Iinclude
 
 SRC				:= ft_manage_flags.c ft_print_char.c ft_putnbr_base_id.c \
 						 ft_print_str.c ft_putnbr_base_upx.c ft_printf_utils.c

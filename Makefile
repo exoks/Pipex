@@ -65,7 +65,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | .create_dir
 	@printf "$(GREEN)[OK]${RESET}: ${PINK}Compiling${RESET} %-26s| $@\n" "$<"
 
 $(FT_PRINTF):
-	@make -C $@ all
+	@make -s -C $@ all
+
+$(OBJ_DIR):
+	@mkdir -p $@
 
 signature:
 	@printf "${GRAY}%19s${RESET}\n" "𓆩♕𓆪"
@@ -96,10 +99,7 @@ fclean: clean
 
 re : fclean all
 
-$(OBJ_DIR):
-	@mkdir -p $@
-
 .create_dir: $(OBJ_DIR)
 
-.PHONY: all clean fclean re signature $(FT_PRINTF)
+.PHONY: all clean fclean re test signature $(FT_PRINTF)
 #===============================================================================

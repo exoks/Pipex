@@ -30,32 +30,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[++i] = 0;
 	return (str);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	printf("%s\n", ft_strjoin(av[1], av[2]));
-	return (0);
-}
-*/
-// LFUN DYALI L3AJIBA KAT7SSAB LEN day 2 str fi da9a wehda
-
-/*int   ft_strlen(char const *s1, char const *s2)
-{
-        int     i;
-        int     len;
-
-        len = 0;
-        i = -1;
-        while (s1[++i] || s2[i])
-        {
-                if ((s1[i] == '\0' || s2[i] == '\0') && len == 0)
-                        len = i * 2;
-                if (len != 0)
-                        len++;
-        }
-        if (len)
-                return (len);
-        else
-                (i * 2);
-}*/

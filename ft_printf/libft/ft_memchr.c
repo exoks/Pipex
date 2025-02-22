@@ -23,11 +23,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		return (0);
 	return ((void *) &s[i]);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	printf("%s\n", memchr(av[1], av[2][0], 8));
-	return (0);
-}
-*/

@@ -22,16 +22,3 @@ void	ft_bzero(void *b, size_t len)
 	while (i < len)
 		med[i++] = 0;
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	int	index;
-
-	index = atoi(av[2]);
-	bzero(av[1], index);
-	printf("%s\n", av[1]);
-	printf("%s\n", &av[1][index]);
-	return (0);
-}*/

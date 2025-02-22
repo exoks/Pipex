@@ -28,13 +28,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = 0;
 	return (len);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	printf("%zu\n", ft_strlcpy(av[1], av[2], atoi(av[3])));
-	printf("%s\n", av[1]);
-	return (0);
-}
-*/

@@ -19,14 +19,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-/*
-#include <fcntl.h>
-int	main(void)
-{
-	int	fd;
-
-	fd = open("d.txt", O_CREAT | O_RDWR, 0777);
-	ft_putendl_fd("hello world", fd);
-	return (0);
-}
-*/

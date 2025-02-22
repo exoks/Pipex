@@ -28,20 +28,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
 		str[i] = f(i, s[i]);
 	return (str);
 }
-/*
-char	ft(unsigned int n, char c)
-{
-	return (c);
-}
-
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char	*str;
-
-	str = ft_strmapi(av[1], ft);
-	while (*str)
-		printf("%c", *(str++));
-	return (0);
-}
-*/

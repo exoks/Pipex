@@ -22,20 +22,3 @@ void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 	while (s[++i])
 		f((unsigned int)i, &s[i]);
 }
-/*
-void	ft(unsigned int i, char *chaaddr)
-{
-	(void) i;
-	*chaaddr = '0';
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char	s[7] = "oussama";
-
-	ft_striteri(s, &ft);
-	printf("%s\n", s);
-	return (0);
-}
-*/

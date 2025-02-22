@@ -31,12 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j = j - i + 1;
 	return (ft_substr(s1, i, j));
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%s\n", ft_strtrim(av[1], av[2]));
-	return (0);
-}
-*/

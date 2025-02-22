@@ -29,17 +29,3 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	char	*str = ft_strdup(av[1]);
-	printf("the len : %lu\n", strlen(str));
-	while (*str)
-		printf("%c", *(str++));
-	return (0);
-}
-*/
-// i does not matter if the pointer if const or not

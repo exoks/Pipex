@@ -28,24 +28,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = 0;
 }
-/*
-void	ft_del(void *pt)
-{
-	free(pt);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	t_list	**pt;
-
-	*pt = (t_list *) malloc(sizeof(t_list));
-	(*pt)->content = (void *) malloc (7);
-	(*pt)->next = (t_list *) malloc (sizeof(t_list));
-	ft_lstclear(pt, &ft_del);
-	printf("%s\n", (*pt)->content);
-	if (pt == NULL)
-		printf("good");
-	return (0);
-}
-*/

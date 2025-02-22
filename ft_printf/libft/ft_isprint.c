@@ -18,10 +18,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-/*#include <stdio.h>
-int	main(int ac, char **av)
-{
-	(void) ac;
-	printf("%d\n", ft_isprint(*(*(++av))));
-	return (0);
-}*/

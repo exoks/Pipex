@@ -48,18 +48,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	char	*str;
-
-	str = ft_itoa(atoi(av[1]));
-	printf("counter : %d\n", ft_counter(atoi(av[1])));
-	puts(str);
-	free(str);
-	return (0);
-}
-*/

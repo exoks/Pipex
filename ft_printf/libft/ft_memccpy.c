@@ -28,15 +28,3 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	dest[30] = "aaaaaaaa";
-	char	src[20] = "hello world";
-
-	printf("%s\n", ft_memccpy(dest, src, 'x', 11));
-	return (0);
-}
-*/
-// I have to cpy at indext of first occurence (it was my problem int that code)

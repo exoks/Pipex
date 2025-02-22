@@ -17,14 +17,3 @@ void	ft_putchar_fd(char c, int fd)
 	if (fd != -1)
 		write(fd, &c, 1);
 }
-/*
-#include <fcntl.h>
-int	main(void)
-{
-	int	fd;
-
-	fd = open("data.txt", O_CREAT | O_RDWR, 7777);
-	ft_putchar_fd('a', fd);
-	return (0);
-}
-*/

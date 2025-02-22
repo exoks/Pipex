@@ -23,14 +23,3 @@ char	*ft_strrchr(const char *s, int c)
 		return (0);
 	return ((char *) &s[len]);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	str[7] = "oussama";
-
-	printf("%s\n", strrchr(str, 7));
-	return (0);
-}
-*/

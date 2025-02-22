@@ -23,14 +23,3 @@ t_list	*ft_lstnew(void *content)
 	list->next = 0;
 	return (list);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	t_list	*pt;
-
-	pt = ft_lstnew("oussama");
-	printf("%s\n", pt->content);
-	return (0);
-}
-*/

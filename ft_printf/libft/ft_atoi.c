@@ -29,19 +29,3 @@ int	ft_atoi(const char *str)
 		nb = (nb * 10) + (*(str++) - '0');
 	return (nb * s);
 }
-/*
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	int	a = 4294967295;
-	char	dest[30] = "99999999999999999999999";
-	printf("%d\n", a);
-	//sprintf(dest, "%d", INT_MIN);
-	printf("ft_atoi : %d\n", ft_atoi(dest));
-	printf("atoi : %d\n", atoi(dest));
-	return (0);
-}
-*/

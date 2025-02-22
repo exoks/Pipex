@@ -20,13 +20,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) s);
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	s[7] = "oussama";
-
-	printf("%s\n", ft_strchr(s, 0));
-	return (0);
-}
-*/

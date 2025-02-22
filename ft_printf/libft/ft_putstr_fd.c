@@ -19,14 +19,3 @@ void	ft_putstr_fd(char *s, int fd)
 	while (*s && fd != -1)
 		ft_putchar_fd(*(s++), fd);
 }
-/*
-#include <fcntl.h>
-int	main(void)
-{
-	int	fd;
-
-	fd = open("d.txt", O_CREAT | O_RDWR, 0777);
-	ft_putstr_fd("hello world", fd);
-	return (0);
-}
-*/

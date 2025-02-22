@@ -33,13 +33,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%s\n", ft_strnstr(av[1], av[2], atoi(av[3])));
-	return (0);
-}
-*/

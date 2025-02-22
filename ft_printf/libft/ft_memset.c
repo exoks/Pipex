@@ -23,12 +23,3 @@ void	*ft_memset(void *b, int c, size_t len)
 		med[i++] = c;
 	return (b);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%s\n", ft_memset(av[1], av[2][0], atoi(av[3])));
-	return (0);
-}*/

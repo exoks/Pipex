@@ -75,14 +75,3 @@ char	**ft_split(char const *s, char c)
 	tab[k] = 0;
 	return (tab);
 }
-//#include <stdio.h>
-//int	main(int ac, char **av)
-//{
-//	char	**tab;
-//
-//	tab = ft_split(av[1], av[2][0]);
-//	printf("count : %d\n", ft_word_counter(av[1], av[2][0]));
-//	while (*tab)
-//		printf("%s\n", *(tab++));
-//	return (0);
-//}

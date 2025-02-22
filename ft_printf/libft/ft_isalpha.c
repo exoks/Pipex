@@ -17,12 +17,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <ctype.h>
-int	main(int ac, char **av)
-{
-	printf("%d\n", ft_isalpha(*(*(++av))));
-	//printf("%d\n", isalpha(-100));
-	return (0);
-}*/

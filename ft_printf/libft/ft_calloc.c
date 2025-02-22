@@ -25,15 +25,3 @@ void	*ft_calloc(size_t count, size_t size)
 		*((char *)pt + i++) = 0;
 	return (pt);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char	*str;
-	int	i;
-
-	str = (char *) calloc(3, 1);
-	printf("%s\n", str);
-	return (0);
-}
-*/

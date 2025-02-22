@@ -35,15 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 	}
 }
-/*
-#include <limits.h>
-#include <fcntl.h>
-int	main(void)
-{
-	int	fd;
-
-	fd = open ("d", O_CREAT | O_RDWR, 0777);
-	ft_putnbr_fd(INT_MIN, fd);
-	return (0);
-}
-*/

@@ -25,14 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-// the return value must be casted to (unsigned char) : 
-//had l9adiay ghadi dir shefting lvalue ila kant < 0
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	printf("%d\n", strncmp(av[1], av[2], 3));
-	return (0);
-}
-*/

@@ -19,10 +19,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*#include <stdio.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%d\n", ft_isalnum(*(*(++av))));
-	return (0);
-}*/

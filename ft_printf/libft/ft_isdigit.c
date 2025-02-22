@@ -17,11 +17,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%d\n", ft_isdigit(*(*(++av))));
-	return (0);
-}*/

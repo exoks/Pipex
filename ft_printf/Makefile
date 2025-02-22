@@ -54,15 +54,11 @@ OBJ				:= $(addprefix $(OBJ_DIR)/, ${SRC:.c=.o})
 SRC				:= $(addprefix $(SRC_DIR)/, $(SRC))
 
 #====<[ Rules: ]>===============================================================
-all: signature $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_DIR)/ft_printf.o
 	@ar -rcs $@  $(OBJ_DIR)/* $(LIBFT)/obj/*
 	@echo "${GREEN}[OK] ${CYAN}$(NAME) ✔️${RESET}"
-
-signature:
-	@printf "${GRAY}%19s${RESET}\n" "𓆩♕𓆪"
-	@printf "${GRAY}%s${RESET}\n"		"𓄂 oussama ezzaou𓆃  "
 
 bonus: clean $(NAME)
 
@@ -108,5 +104,5 @@ re: fclean all
 	
 .create_dirs: $(OBJ_DIR)
 
-.PHONY: all bonus clean fclean re $(LIBFT) signature
+.PHONY: all bonus clean fclean re $(LIBFT)
 #===============================================================================

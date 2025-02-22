@@ -54,11 +54,15 @@ OBJ				:= $(addprefix $(OBJ_DIR)/, ${SRC:.c=.o})
 SRC				:= $(addprefix $(SRC_DIR)/, $(SRC))
 
 #====<[ Rules: ]>===============================================================
-all: $(NAME)
+all: signature $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_DIR)/ft_printf.o
 	@ar -rcs $@  $(OBJ_DIR)/* $(LIBFT)/obj/*
-	@echo "${GREEN}[OK]: ${CYAN}$(NAME) ✔️${RESET}"
+	@echo "${GREEN}[OK] ${CYAN}$(NAME) ✔️${RESET}"
+
+signature:
+	@printf "${GRAY}%19s${RESET}\n" "𓆩♕𓆪"
+	@printf "${GRAY}%s${RESET}\n"		"𓄂 oussama ezzaou𓆃  "
 
 bonus: clean $(NAME)
 
@@ -67,11 +71,11 @@ test:
 
 $(OBJ_DIR)/ft_printf.o: ft_printf.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-	@printf "$(GREEN)[OK]${RESET}: ${PINK}Compiling${RESET} %-26s| $@\n" "$<"
+	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-26s| $@\n" "$<"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | .create_dirs $(LIBFT) 
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-	@printf "$(GREEN)[OK]${RESET}: ${PINK}Compiling${RESET} %-26s| $@\n" "$<"
+	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-26s| $@\n" "$<"
 
 $(LIBFT):
 	@make -C $@
@@ -83,20 +87,20 @@ clean:
 	@make -C $(LIBFT) fclean
 	@if [ -d $(OBJ_DIR) ]; then\
 		${RM} $(OBJ_DIR);\
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
 					 "... " "$(PROJECT)/$(OBJ_DIR) ✔️";\
 	else\
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(OBJ_DIR) ✖️";\
 	fi
 
 fclean: clean
 	@if [ -f $(NAME) ]; then\
 		${RM} $(NAME);\
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
 					 "... " "$(PROJECT)/$(NAME) ✔️";\
 	else\
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(NAME) ✖️";\
 	fi
 
@@ -104,5 +108,5 @@ re: fclean all
 	
 .create_dirs: $(OBJ_DIR)
 
-.PHONY: all bonus test clean fclean re $(LIBFT)
+.PHONY: all bonus clean fclean re $(LIBFT) signature
 #===============================================================================

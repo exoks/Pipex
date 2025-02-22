@@ -46,7 +46,7 @@ OBJ_DIR				:= obj
 SRC_DIR				:= src
 FT_PRINTF			:= ft_printf
 LIBFTPRINTF		:= $(FT_PRINTF)/libftprintf.a 
-INCLUDE 			:= -Iinclude -I$(FT_PRINTF)/include -I$(FT_PRINTF)/libft
+INCLUDE 			:= -Iinclude -I$(FT_PRINTF)/include -I$(FT_PRINTF)/libft/include
 
 SRC						:= pipex.c pipex_parser.c pipex_clear.c pipex_here_doc.c
 

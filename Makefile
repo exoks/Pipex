@@ -6,7 +6,7 @@
 #    By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 13:03:13 by oezzaou           #+#    #+#              #
-#    Updated: 2022/12/16 18:16:19 by oezzaou          ###   ########.fr        #
+#    Updated: 2025/02/23 15:17:22 by oezzaou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ NAME 					:= pipex
 OBJ_DIR				:= obj
 SRC_DIR				:= src
 FT_PRINTF			:= ft_printf
-LIBFTPRINTF		:= $(FT_PRINTF)/libftprintf.a 
 INCLUDE 			:= -Iinclude -I$(FT_PRINTF)/include -I$(FT_PRINTF)/libft/include
 
 SRC						:= pipex.c pipex_parser.c pipex_clear.c pipex_here_doc.c
@@ -57,7 +56,7 @@ SRC						:= $(addprefix $(SRC_DIR)/, $(SRC))
 all: signature $(NAME) 
 
 $(NAME): $(FT_PRINTF) $(OBJ) 
-	@$(CC) $(CFLAGS) $(INCLUDE) $(filter-out $<, $^) $(LIBFTPRINTF) -o $@
+	@$(CC) $(CFLAGS) $(INCLUDE) $(filter-out $<, $^) -o $@ -L$< -lftprintf
 	@echo "${GREEN}[OK] ${CYAN}$(NAME) ✔️${RESET}"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | .create_dir 

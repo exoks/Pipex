@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 21:30:35 by oezzaou           #+#    #+#             */
-/*   Updated: 2025/02/23 09:35:08 by oezzaou          ###   ########.fr       */
+/*   Created: 2025/02/23 09:04:12 by oezzaou           #+#    #+#             */
+/*   Updated: 2025/03/01 12:16:57 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-//====<[ ft_strncmp: ]>=========================================================
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+//====<[ ft_strcmp: ]>==========================================================
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	index;
+	int	index;
 
+	if (!s1 || !s2)
+		return (-1);
 	index = 0;
-	while ((s1[index] || s2[index]) && index < n)
-	{
-		if (s1[index] != s2[index])
-			return (s1[index] - s2[index]);
+	while (s1[index] && s1[index] == s2[index])
 		index++;
-	}
-	return (0);
+	return (s1[index] - s2[index]);
 }

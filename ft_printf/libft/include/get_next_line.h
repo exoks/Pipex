@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:18:56 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/10/23 13:29:42 by oezzaou          ###   ########.fr       */
+/*   Updated: 2025/02/28 13:49:31 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ typedef struct s_buff
 }t_buff;
 
 //====<[ Function: prototypes ]>================================================
-t_buff	*ft_lstnew(char *buff);
-t_buff	*ft_lstlast(t_buff *lst);
-t_buff	*ft_lstclear(t_buff **head);
+t_buff	*gnl_lstnew(char *buff);
+t_buff	*gnl_lstlast(t_buff *lst);
+t_buff	*gnl_lstclear(t_buff **head);
 char	*ft_strcat(char *dst, char *src);
 void	*ft_calloc(size_t count, size_t size);
 

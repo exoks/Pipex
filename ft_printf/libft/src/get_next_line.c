@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 02:40:15 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/10/23 12:18:05 by oezzaou          ###   ########.fr       */
+/*   Updated: 2025/02/28 13:48:09 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 	if (!lst && !*rest[fd])
 		return (0);
 	line = get_line_from_lst(lst, rest[fd], ++size);
-	ft_lstclear(&lst);
+	gnl_lstclear(&lst);
 	return (line);
 }
 
@@ -58,13 +58,13 @@ t_buff	*ft_lstcreat(int fd, char *buff, int *size)
 		{
 			free(buff);
 			if (n_read == -1)
-				return (ft_lstclear(&lst));
+				return (gnl_lstclear(&lst));
 			return (lst);
 		}
 		if (lst)
-			(ft_lstlast(lst))->next = ft_lstnew(buff);
+			(gnl_lstlast(lst))->next = gnl_lstnew(buff);
 		else
-			lst = ft_lstnew(buff);
+			lst = gnl_lstnew(buff);
 		(*size)++;
 	}
 	return (lst);

@@ -1,5 +1,5 @@
 # **Pipex42** #
-Pipex is a project from 42 coding school that recreates a simple version of shell pipes (`|`) in C. It allows you to connect multiple commands, so the output of one command becomes the input of the next, just like in a real shell, It also supports HEREDOC mode which lets you provide input directly in the terminal.
+Pipex is a project recreates a simple version of shell pipes (`|`) in C. It allows you to connect multiple commands, so the output of one command becomes the input of the next, just like in a real shell, It also supports HEREDOC mode which lets you provide input directly in the terminal.
 
 #### **What Pipex Does** : ####
 * Reads input from a **file** or **command**.

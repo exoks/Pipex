@@ -1,7 +1,7 @@
-# **Pipex42** #
-Pipex is a project recreates a simple version of shell pipes (`|`) in C. It allows you to connect multiple commands, so the output of one command becomes the input of the next, just like in a real shell, It also supports HEREDOC mode which lets you provide input directly in the terminal.
+# **XPipe** #
+XPipe is a project recreates a simple version of shell pipes (`|`) in C. It allows you to connect multiple commands, so the output of one command becomes the input of the next, just like in a real shell, It also supports HEREDOC mode which lets you provide input directly in the terminal.
 
-#### **What Pipex Does** : ####
+#### **What XPipe Does** : ####
 * Reads input from a **file** or **command**.
 * Passes the output of one command to the next using **pipes**.
 * Writes the final output to another file.

@@ -16,8 +16,8 @@ make
 ```sh 
 ./pipex infile "cmd1" "cmd2" outfile
 ```
-**NOTE**:
-It works exactly like this in the shell:
+> **NOTE**:  
+> It works exactly like this in the shell:
 ```sh 
 < infile cmd1 | cmd2 > outfile
 ```

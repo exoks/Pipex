@@ -29,4 +29,14 @@ make
 
 3_ cmd2 writes its final output to outfile
 
+### **Cleanup** ###
+* Remove object files:
+```sh
+make clean
+```
+
+* Remove all binaries and object files:
+```sh
+make fclean
+```
 ---
